@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    identification_number = models.CharField(max_lenght=100)
+    identification_number = models.CharField(max_length=100)
     photo = models.ImageField(blank=True, null=True)
 
 @receiver

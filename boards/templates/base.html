@@ -35,7 +35,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="Preview">
           <a class="dropdown-item" href="#">Login</a>
-          <a class="dropdown-item" href="#">Signup</a>
+          <a class="dropdown-item" href="{% url 'accounts:signup' %}">Signup</a>
         </div>
       </li>
       <li class="nav-item">
@@ -46,6 +46,22 @@
 </nav>
 
 <div class="container" style="margin-top:30px">
+  <div class="row">
+    <div id="messages" class="col-md-12">
+      {% for message in messages%}
+        {% if message.level_tag == 'success' %}
+          <div class="alert alert-success">
+            {{ message }}
+          </div>
+        {% else %}
+          <div class="alert alert-warning">
+            {{ message }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
   {% block container %}
   {% endblock %}
 </div>
