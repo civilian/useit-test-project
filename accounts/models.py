@@ -6,7 +6,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     identification_number = models.CharField(max_lenght=100)
-    image = models.ImageField(blank=True, null=True)
+    photo = models.ImageField(blank=True, null=True)
 
 @receiver
 def create_user_profile(sender, instance, created, **kwargs):
