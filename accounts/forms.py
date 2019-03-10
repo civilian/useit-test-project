@@ -33,13 +33,11 @@ class SignUpUserForm(forms.Form):
         raise forms.ValidationError(USERNAME_ALREADY_IN_USER % username)
 
     def save(self):
-        user = User()
-        user.username = self.cleaned_data['username']
-        user.name = self.cleaned_data['name']
-        user.lastname = self.cleaned_data['lastname']
-        user.password = self.cleaned_data['password']
-        user.save()
-        created_user = User.objects.get(username=user.username)
+        User.objects.create_user(username=self.cleaned_data['username'],
+                                    first_name=self.cleaned_data['name'],
+                                    last_name=self.cleaned_data['lastname'],
+                                    password=self.cleaned_data['password'])
+        created_user = User.objects.get(username=self.cleaned_data['username'])
         created_user.profile.identification_number = self.cleaned_data['identification_number']
         created_user.profile.photo = self.cleaned_data['photo']
-        return user.save()
+        return created_user.save()
