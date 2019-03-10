@@ -5,4 +5,5 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', TemplateView.as_view(template_name='boards/index.html'), name='home'),
     path('accounts/', include('accounts.urls')),
+    path('boards/', include('boards.urls')),
 ]

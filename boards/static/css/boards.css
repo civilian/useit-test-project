@@ -1,0 +1,15 @@
+#id_new_board_div {
+    min-height: 200px;
+    float: right;
+}
+
+#id_new_board_div a {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.card {
+    min-height: 200px;
+    margin-bottom: 10px;
+}
