@@ -3,25 +3,29 @@ from rest_framework import routers, serializers, viewsets
 
 from boards.models import Idea, Board
 
-class BoardSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Board
-        fields = ('id', 'private')
-
 class IdeaSerializer(serializers.ModelSerializer):
+    text = serializers.CharField(
+        allow_blank=False, error_messages={'blank': "You can't have an empty list item"}
+    )
 
     class Meta:
         model = Idea
         fields = ('id', 'board', 'text', 'accepted')
 
-class BoardViewSet(viewsets.ModelViewSet):
-    serializer_class = BoardSerializer
-    queryset = Board.objects.all()
+class BoardSerializer(serializers.ModelSerializer):
+    ideas = IdeaSerializer(many=True, source='idea_set')
+
+    class Meta:
+        model = Board
+        fields = ('id', 'private', 'ideas')
 
 class IdeaViewSet(viewsets.ModelViewSet):
     serializer_class = IdeaSerializer
     queryset = Idea.objects.all()
+
+class BoardViewSet(viewsets.ModelViewSet):
+    serializer_class = BoardSerializer
+    queryset = Board.objects.all()
 
 
 

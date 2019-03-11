@@ -13,6 +13,13 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">{{ board.title }}</h5>
+            <ul>
+              {% for idea in board.idea_set.all %}
+                {% if idea.accepted %}
+                  <li>{{ idea.text }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
             <a class="btn btn-success right-down" href="{% url 'boards:crud_user_ideas' board.id %}">Manage Ideas</a>
           </div>
         </div>

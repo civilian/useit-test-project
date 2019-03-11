@@ -9,17 +9,11 @@
         {% csrf_token%}
         <input type="text" name="text"
             placeholder="Add a new idea">
+        <div class="form-group has-error">
+        </div>
       </form>
-      {% for idea in ideas %}
-        <ul>
-          <li>
-            <p> {{ idea.text }}
-              <a class="btn btn-danger right-down" href="#">Delete</a>
-              <a class="btn btn-success right-down" href="#">Edit</a>
-            </p>
-          </li>
-        </ul>
-      {% endfor %}
+      <table id="id_idea_table" class="table">
+      </table>
     </div>
   </div>
 {% endblock %}
