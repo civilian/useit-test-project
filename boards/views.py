@@ -36,5 +36,7 @@ class CrudIdeasPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # TODO: create acepted and the other ideas
-        context['ideas'] = Idea.objects.filter(board__id=self.kwargs['board_id'])
+        board = Board.objects.get(id=self.kwargs['board_id'])
+        context['ideas'] = Idea.objects.filter(board=board)
+        context['board'] = board
         return context

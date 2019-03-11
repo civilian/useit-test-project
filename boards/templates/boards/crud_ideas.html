@@ -5,18 +5,35 @@
 {% block container %}
   <div class="row">
     <div class="col-md-12">
-      <input type="text" placeholder="Add a new idea">
-      <button>Add</button>
+      <form id="id_idea_form">
+        {% csrf_token%}
+        <input type="text" name="text"
+            placeholder="Add a new idea">
+      </form>
       {% for idea in ideas %}
-        <div class="card">
-          <div class="card-body">
+        <ul>
+          <li>
             <p> {{ idea.text }}
-              <a class="btn btn-danger right-down" href="{% url 'boards:delete_idea' idea.id %}">Delete</a>
-              <a class="btn btn-success right-down" href="{% url 'boards:edit_ideas' idea.id %}">Edit</a>
+              <a class="btn btn-danger right-down" href="#">Delete</a>
+              <a class="btn btn-success right-down" href="#">Edit</a>
             </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       {% endfor %}
     </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="/static/js/crud_ideas.js"></script>
+  <script>
+$(document).ready(function () {
+  window.Boards.initialize({
+    boardApiUrl: "{% url 'board-detail' board.id %}",
+    ideasApiUrl: "{% url 'idea-list' %}",
+    boardId: {{ board.id }},
+    acceptedIdea: true,
+  });
+});
+  </script>
 {% endblock %}
