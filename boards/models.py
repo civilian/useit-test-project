@@ -8,9 +8,4 @@ class Board(models.Model):
     private = models.BooleanField()
     title = models.CharField(max_length=100)
 
-class Idea(models.Model):
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
-    text = models.TextField(default='')
-    accepted = models.BooleanField()
-
 

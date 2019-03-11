@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'accounts',
     'boards',
     'rest_framework',
+    'ideas',
 ]
 
 MIDDLEWARE = [

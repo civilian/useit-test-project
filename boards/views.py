@@ -4,8 +4,8 @@ from django.views.generic.list import ListView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
-from boards.models import Board, Idea
-
+from boards.models import Board
+from ideas.models import Idea
 
 class ShowBoardsPageView(TemplateView):
 
