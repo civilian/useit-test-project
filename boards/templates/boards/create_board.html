@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Board | BoardsApp{% endblock %}
+
+{% block container %}
+  <div class="row">
+    <div class="col-md-12">
+      <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Save Board">
+      </form>
+    </div>
+  </div>
+{% endblock %}

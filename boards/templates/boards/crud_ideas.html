@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage ideas | BoardsApp{% endblock %}
+
+{% block container %}
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" placeholder="Add a new idea">
+      <button>Add</button>
+      {% for idea in ideas %}
+        <div class="card">
+          <div class="card-body">
+            <p> {{ idea.text }}
+              <a class="btn btn-danger right-down" href="{% url 'boards:delete_idea' idea.id %}">Delete</a>
+              <a class="btn btn-success right-down" href="{% url 'boards:edit_ideas' idea.id %}">Edit</a>
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
