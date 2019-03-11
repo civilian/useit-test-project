@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'config',
     'accounts',
     'boards',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
