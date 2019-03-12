@@ -25,10 +25,13 @@
     <ul class="navbar-nav">
       {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+          <a class="nav-link" 
+            id="id_logout_link"
+            href="{% url 'accounts:logout' %}">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'boards:boards' %}">Boards</a>
+          <a class="nav-link" 
+            href="{% url 'boards:boards' %}">Boards</a>
         </li>
       {% else %}
         <li class="nav-item dropdown">
@@ -39,7 +42,8 @@
             Account
           </a>
           <div class="dropdown-menu" aria-labelledby="Preview">
-            <a class="dropdown-item" 
+            <a class="dropdown-item"
+                id="id_login_link"
                 href="{% url 'accounts:login' %}">Login</a>
             <a class="dropdown-item" 
                 id="id_signup_link"

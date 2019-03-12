@@ -29,4 +29,10 @@ class BasePage(object):
     
     @wait
     def click_logout(self):
-        self.test.browser.find_element_by_name('logout').click()
+        self.test.browser.find_element_by_id('id_logout_link').click()
+    
+    def write_in_username_input_box(self, text):
+        self.write_in_any_input_by_id(text, 'id_username')
+    
+    def write_in_password_input_box(self, text):
+        self.write_in_any_input_by_id(text, 'id_password')

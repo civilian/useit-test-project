@@ -10,8 +10,7 @@ class AccountSignupWindow(BasePage):
         self.test.browser.find_element_by_id('id_signup_link').click()
         return self
     
-    def write_in_username_input_box(self, text):
-        self.write_in_any_input_by_id(text, 'id_username')
+
     
     def write_in_name_input_box(self, text):
         self.write_in_any_input_by_id(text, 'id_name')
@@ -21,9 +20,6 @@ class AccountSignupWindow(BasePage):
     
     def write_in_identification_number_input_box(self, text):
         self.write_in_any_input_by_id(text, 'id_identification_number')
-    
-    def write_in_password_input_box(self, text):
-        self.write_in_any_input_by_id(text, 'id_password')
     
     def write_in_retype_password_input_box(self, text):
         self.write_in_any_input_by_id(text, 'id_retype_password')

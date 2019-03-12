@@ -14,8 +14,8 @@ class SignupTest(FunctionalTest):
         # the identification number, the password, and
         # Retypes the password
 
-        # He clicks the register now button
+        # He clicks the signup now button
 
         # And the page tells him his user has been created
-        user = util.get_unsaved_user()
-        AccountSignupWindow(self).create_user(user)
+        profile = util.get_unsaved_user()
+        AccountSignupWindow(self).create_user(profile)
