@@ -34,7 +34,9 @@ The url to login is [http://localhost:8000/accounts/login](http://localhost:8000
 The index of the applications shows all the public boards while the Boards navigation link shows the user own boards and the public boards of other users.
 
 ## Testing
-The functional test implementation has been started so to run them after installation you have to run:
+The functional test implementation of the project has been started to run them you first need to install [firefox and geckodriver](http://www.obeythetestinggoat.com/book/pre-requisite-installations.html#firefox_gecko)
+
+And to run the test after installation you have to execute:
 `python manage.py test functional_tests`
 
 ## Implementation
