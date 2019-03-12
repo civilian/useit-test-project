@@ -2,6 +2,10 @@
 
 {% block title %}BoardsApp{% endblock %}
 
+{% block stylesheets %}
+  <link rel="stylesheet" href="/static/css/boards.css">
+{% endblock %}
+
 {% block container %}
   <div class="row">
     {% for board in public_boards %}

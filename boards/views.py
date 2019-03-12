@@ -38,7 +38,7 @@ class CreateBoardPage(SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
-        return super(CreateBoardPageView, self).form_valid(form)
+        return super(CreateBoardPage, self).form_valid(form)
 
 class CrudIdeasPage(TemplateView):
     template_name = 'boards/crud_ideas.html'
