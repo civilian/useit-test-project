@@ -35,12 +35,15 @@
           <a class="nav-link dropdown-toggle" 
             data-toggle="dropdown" 
             href="#" role="button" aria-haspopup="true" 
-            aria-expanded="false">
+            aria-expanded="false" id="id_account_link">
             Account
           </a>
           <div class="dropdown-menu" aria-labelledby="Preview">
-            <a class="dropdown-item" href="{% url 'accounts:login' %}">Login</a>
-            <a class="dropdown-item" href="{% url 'accounts:signup' %}">Signup</a>
+            <a class="dropdown-item" 
+                href="{% url 'accounts:login' %}">Login</a>
+            <a class="dropdown-item" 
+                id="id_signup_link"
+                href="{% url 'accounts:signup' %}">Signup</a>
           </div>
         </li>
       {% endif %}

@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'boards',
     'rest_framework',
     'ideas',
+    'functional_tests',
 ]
 
 MIDDLEWARE = [

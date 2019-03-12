@@ -1,0 +1,77 @@
+<html lang="en"><head>
+  <title>Signup User | BoardsApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/base.css">
+  
+  
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Boards App</h1>
+  <p>Administrate your board here!</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="/">BoardsApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="id_account_link">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="Preview">
+            <a class="dropdown-item" href="/accounts/login">Login</a>
+            <a class="dropdown-item" id="id_signup_link" href="/accounts/signup">Signup</a>
+          </div>
+        </li>
+      
+      
+    </ul>
+  </div>  
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div id="messages" class="col-md-12">
+      
+    </div>
+  </div>
+
+  
+  <div class="row">
+      <div class="col-md-12">
+        <form method="post">
+          <input type="hidden" name="csrfmiddlewaretoken" value="r5dHbBrwmAhHuS2H0SsOB0Yv5IE1cvkZw7ooiQx7ySQoOOVcGHdmvF1tbHCeAa3y">
+          <p><label for="id_username">Username:</label> <input type="text" name="username" required="" class="form-control" id="id_username"></p>
+<p><label for="id_name">Name:</label> <input type="text" name="name" required="" class="form-control" id="id_name"></p>
+<p><label for="id_lastname">Lastname:</label> <input type="text" name="lastname" required="" class="form-control" id="id_lastname"></p>
+<p><label for="id_identification_number">Identification number:</label> <input type="text" name="identification_number" required="" class="form-control" id="id_identification_number"></p>
+<p><label for="id_photo">Photo:</label> <input type="file" name="photo" accept="image/*" class="form-control" id="id_photo"></p>
+<p><label for="id_password">Password:</label> <input type="password" name="password" required="" class="form-control" id="id_password"></p>
+<p><label for="id_retype_password">Retype password:</label> <input type="password" name="retype_password" required="" class="form-control" id="id_retype_password"></p>
+          <input type="submit" value="Signup">
+        </form>
+      </div>
+  </div>
+
+</div>
+
+<div id="footer" class="text-center">
+  <p>Copyright BoardsApp - All rights reserved </p>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  
+
+
+</body></html>
