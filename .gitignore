@@ -7,3 +7,4 @@ local_settings.py
 db.sqlite3
 media
 .vscode
+functional_tests/screendumps
