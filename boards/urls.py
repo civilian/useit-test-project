@@ -8,6 +8,5 @@ app_name = 'boards'
 urlpatterns = [
     path('', ShowBoardsPageView.as_view(), name='boards'),
     path('create_board', CreateBoardPageView.as_view(), name='create_board'),
-    path('crud_user_ideas/<int:board_id>/', CrudIdeasPageView.as_view(), name='crud_user_ideas'),
-    path('delete/<int:board_id>/', CrudIdeasPageView.as_view(), name='delete_ideas'),
+    path('crud_user_ideas/<int:board_pk>/', CrudIdeasPageView.as_view(), name='crud_user_ideas'),
 ]

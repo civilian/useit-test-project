@@ -27,6 +27,7 @@ $(document).ready(function () {
     ideasApiUrl: "{% url 'idea-list' %}",
     boardId: {{ board.id }},
     acceptedIdea: true,
+    homeUrl: "{% url 'home' %}",
   });
 });
   </script>
