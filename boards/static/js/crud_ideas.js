@@ -2,10 +2,10 @@ window.Boards = {};
 
 window.Boards.createHtlmIdea = function (text, id, homeUrl){
     const deleteUrl = homeUrl + 'ideas/delete/' + id;
-    const editUrl =  homeUrl + 'boards/crud_user_ideas/' + id;
-    return '\n<tr><td>' + text + 
-            '</td><td><a class="btn btn-danger right-down" href="'+ deleteUrl + '">Delete</a>' +
-             '<a class="btn btn-success right-down" href="'+ editUrl +'">Edit</a></td></tr>' ;
+    const updateUrl =  homeUrl + 'ideas/update/' + id;
+    return '\n<tr><td>' + text + '</td><td>'+
+             '<a class="btn btn-danger right-down" href="'+ deleteUrl + '">Delete</a>' +
+             '<a class="btn btn-success right-down" href="'+ updateUrl +'">Edit</a></td></tr>' ;
 
 }
 
