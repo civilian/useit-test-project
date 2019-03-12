@@ -21,12 +21,17 @@
 {% block scripts %}
   <script type="text/javascript" src="/static/js/crud_ideas.js"></script>
   <script>
+{% if board.owner == user %}
+    const currentUserBoard = true;
+{% else %}
+    const currentUserBoard = false;
+{% endif %}
 $(document).ready(function () {
   window.Boards.initialize({
     boardApiUrl: "{% url 'board-detail' board.id %}",
     ideasApiUrl: "{% url 'idea-list' %}",
     boardId: {{ board.id }},
-    acceptedIdea: true,
+    currentUserBoard: currentUserBoard,
     homeUrl: "{% url 'home' %}",
   });
 });

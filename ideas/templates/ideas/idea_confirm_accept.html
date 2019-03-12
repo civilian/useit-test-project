@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Accept idea | BoardsApp{% endblock %}
+
+{% block container %}
+  <div class="row">
+    <div class="col-md-12">
+      <form method="post" action="{% url 'ideas:accept' idea.id %}">
+        {% csrf_token %}
+        <p>Are you sure you want to accept idea "{{ idea }}"?</p>
+        <input type="submit" value="Confirm">
+      </form>
+    </div>
+  </div>
+{% endblock %}

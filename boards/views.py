@@ -7,7 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from boards.models import Board
 from ideas.models import Idea
 
-class IndexPageView(TemplateView):
+class IndexPage(TemplateView):
 
     template_name = 'boards/index.html'
 
@@ -17,7 +17,7 @@ class IndexPageView(TemplateView):
         context['public_boards'] = Board.objects.filter(private=False)
         return context
 
-class ShowBoardsPageView(TemplateView):
+class ShowBoardsPage(TemplateView):
 
     template_name = 'boards/show_boards.html'
 
@@ -29,7 +29,7 @@ class ShowBoardsPageView(TemplateView):
                                         .filter(private=False))
         return context
 
-class CreateBoardPageView(SuccessMessageMixin, CreateView):
+class CreateBoardPage(SuccessMessageMixin, CreateView):
     success_message = 'The board has been created'
     template_name = 'boards/create_board.html'
     model = Board
@@ -40,12 +40,11 @@ class CreateBoardPageView(SuccessMessageMixin, CreateView):
         form.instance.owner = self.request.user
         return super(CreateBoardPageView, self).form_valid(form)
 
-class CrudIdeasPageView(TemplateView):
+class CrudIdeasPage(TemplateView):
     template_name = 'boards/crud_ideas.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # TODO: create acepted and the other ideas
         board = Board.objects.get(id=self.kwargs['board_pk'])
         context['ideas'] = Idea.objects.filter(board=board)
         context['board'] = board

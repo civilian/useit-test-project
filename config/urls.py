@@ -5,14 +5,14 @@ from rest_framework import routers
 
 from boards.api import BoardViewSet
 from ideas.api import IdeaViewSet
-from boards.views import IndexPageView
+from boards.views import IndexPage
 
 router = routers.DefaultRouter()
 router.register(r'idea', IdeaViewSet)
 router.register(r'board', BoardViewSet)
 
 urlpatterns = [
-    path('', IndexPageView.as_view(), name='home'),
+    path('', IndexPage.as_view(), name='home'),
     path('accounts/', include('accounts.urls')),
     path('boards/', include('boards.urls')),
     path('ideas/', include('ideas.urls')),
