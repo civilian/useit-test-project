@@ -31,6 +31,14 @@
           <div class="card-body">
             <h5 class="card-title">{{ board.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">( Board of user {{ board.owner }} )</h6>
+            <ul>
+              {% for idea in board.idea_set.all %}
+                {% if idea.accepted %}
+                  <li>{{ idea.text }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            <a class="btn btn-success right-down" href="{% url 'boards:crud_user_ideas' board.id %}">Contribute Ideas</a>
           </div>
         </div>
       </div>

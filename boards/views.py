@@ -7,6 +7,16 @@ from django.contrib.messages.views import SuccessMessageMixin
 from boards.models import Board
 from ideas.models import Idea
 
+class IndexPageView(TemplateView):
+
+    template_name = 'boards/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['public_boards'] = Board.objects.filter(private=False)
+        return context
+
 class ShowBoardsPageView(TemplateView):
 
     template_name = 'boards/show_boards.html'
